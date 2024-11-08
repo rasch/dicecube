@@ -1,0 +1,54 @@
+{
+  "include": ["**/*.js"],
+  "compilerOptions": {
+    // Type Checking
+
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "exactOptionalPropertyTypes": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+
+    // Modules
+
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "resolveJsonModule": true,
+
+    // Emit
+
+    "declaration": true,
+    "declarationMap": true,
+    "newLine": "lf",
+    "noEmit": true,
+    "noEmitOnError": true,
+    "outDir": "dist",
+    "removeComments": true,
+    "sourceMap": true,
+
+    // JavaScript Support
+
+    "allowJs": true,
+    "checkJs": true,
+
+    // Interop Constraints
+
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+
+    // Language and Environment
+
+    "target": "es2020",
+    "useDefineForClassFields": true,
+
+    // Completeness
+
+    "skipLibCheck": true
+  }
+}
