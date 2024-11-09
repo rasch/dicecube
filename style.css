@@ -1,0 +1,284 @@
+/**
+ * Reset
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/**
+ * Base
+ */
+
+:root {
+  /**
+   * Retro Color Scheme (by Sophia)
+   * https://www.schemecolor.com/retro.php
+   */
+  --raisin-black: #272324;
+  --cookies-and-cream: #e4d8b4;
+  --khaki: #c2b28f;
+  --dark-sea-green: #83b799;
+  --light-carmine-pink: #e86f68;
+  --arylide-yellow: #e2cd6d;
+  --gradient: linear-gradient(to bottom, var(--light-carmine-pink), var(--dark-sea-green));
+
+  --sans: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  --mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+}
+
+/**
+ * Boulder Font (OFL)
+ *
+ * This base64 enconded font is a subset that only contains the six (6)
+ * glyphs required for the h1 title ("bcdeiu"). It has also been edited
+ * with fontforge to fix some issues.
+ *
+ * - The em-size has been changed from 1000 -> 1024 (because convention is
+ *   to use a power of two, typically either 1024 or 2048). This corrected
+ *   some scaling issues that I was experiencing with the font.
+ *
+ * - The letters have been shifted down 200 (em-units) to fix an issue with
+ *   background-clip cutting off the ascenders of the "b" and "d". This
+ *   works fine with the six glyphs that I'm using because none of them
+ *   have descenders.
+ *
+ * Source: https://fontstruct.com/fontstructions/show/163854/boulder_2
+ * License: https://fontstruct.com/fontstructions/license/163854/boulder_2
+ * Alt: https://www.fontspace.com/boulder-font-f83202
+ */
+@font-face {
+  font-family: 'dicecube';
+  src: url("data:font/woff2;base64,d09GMgABAAAAAAUgAA4AAAAADUQAAATKAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP0ZGVE0cGiAGYACCWggEEQgKhxCFYQsUAAE2AiQDGgQgBYtiBzQbjAsjESaMsgfgLw54MqeRQ7hOTTb9sxGwRsOtt5fzQTz+hni1X5up5hApB0ccQbXfZ8/ufroQo0JQF8fsEfTJqMhchCEN5AgkuESl6iGKl66igwGd9f7nWj5ZVLX0W9255ABtGd1idvcfZUNHwtgq316YQcR0/3N6P+H//yU3AFBAz0eouemWZWNbdbEjtJEDFCqdRzfZ9fmRULNqLe0BulfvIR0wOk5E2AeaMLKQW/5lSBEpAonCx8VFRqg4HavzEG/w4er0vwMBX3L6Hj6/XnIHvkwZdESgK3oaKKEgIRBI+XHuqSlFQcVFQWFfdEABIABg1fbPd6y0y9kyo0KZERCQV4CRAhkZQwXYIQsMVSxEXRGSg85WFXalB1bHQh1kRa06CA1CCF5OguhuQpjAVy61OhrUH9HEPszodA1RVRJogd7oQ0wklgMKpksgS7KsSKWUBF09vZRVtzppaIxIFysbrU2+iyyaGPltYSdnUgt2mq0TqLPq37oSfnKtcPsSsOI6X8g6bEtTgzQVoOn5QCq8G9ERu6hGuARnoUETUJCmpiyuCqAcGIUWaHOqQxkTKXfAp0oZcgsIXmQoU1ZRiBhTVAnBLmlsnwvhZB0xD8hjOOp2ygzakrZu/51OXtHV1+lz5XnhYyWiqNYiaju5/Ofs5NycNtE/TiLgFHJ5StCKNQcbIazzLVHMKWGmHHLejfKLEUnAPWnbyc7yxzwubrXAjRKoM0/5Wsb6ftBxAMLREcVNoscOrjtL9ISQlkVZA3tEn8WUB3iY2Fti2EAj0kYpaKYI3nwxkJNzd/JB3RA7kQMdVyNWWmHvbJZ4nMbj7jgOD3SGGUsfNYrfszvrtY+Vek7WRkIWalaA5Hr8j8T4zoHg/MXLr6Nw6d8mxeLuBUdXc/K1nkFTAkGZUSE/hnxNAABKfmw0KFtx+ELz/IGWdgUkhMBK0wHD45gADLO0GqHhEJ/kC3yWO1D08Aw12XvUNfxBw5TYhKb+8QAt3eMT2oxN89HFkvQOXS3Ol9FNr/zz4D4mlXWyKC0shiF0184n+RSf5RsohruPmrq3qOvuMxqe/e0fW87TwLbDZNhxm1/YtZid2OPbA/vO2vx9B977zwWttmaxUsUjlxILLEeeKYHjJXIeaZGkIawoHedOWj2r4HyS+2tOLgvsogVTOcXCrh+mubLANkrZtCJh4ZGA/cIZDfGoRMMFG0W0PuEsDRJmPUmXXxV0zvvg9w4yHmEOSVCTsATzq2cS1gTRCoTduiGjzeCK6rCPWzvreGJHycUJ9gsPuwHYt4wuAhzgeTVnRBAK6sG6Ht+DbN9mi3KExo/RNQpGzSqgdW3uCGQp6XNKY2IR5uuzMK/q44IdeDswk/7oI7i69efk7bj+QIRx/Z/kCE5FWxKaetoGujrESF5XpDW4utfyclWE+7/JDqLZaw+6HdFHSx61uns1zZq2fUNSh2xCiaivWBbbgcoEbVWd/lB2pNjVi7FsfQOb1ZT5+KpLHrGsSamj4MSWfey4bmknwJvYguLTvUvECBKZCTave5ENpVZZsxwypqeRjJn11COuSpUcTu9lplx+DrXjiEu1jaqrteUxY62iZ2t/x8mKUpUDCcBzBQgAALRAgNzqyrUbtx79Ag==");
+}
+
+body {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 100%;
+  color: var(--cookies-and-cream);
+  background-color: var(--raisin-black);
+  font-family: var(--sans);
+}
+
+main {
+  padding-bottom: 6rem;
+}
+
+h1 {
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  font-family: "dicecube", var(--mono);
+  text-align: center;
+}
+
+h1 a,
+h1 a:visited {
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: var(--gradient);
+  color: var(--cookies-and-cream);
+  text-decoration: none;
+  transition: 150ms linear color;
+}
+
+h1 a:hover {
+  color: transparent;
+  transition: 150ms linear color;
+}
+
+.icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  flex-shrink: 0;
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+/**
+ * Dicecube Controls
+ */
+
+.slideshow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slideshow button {
+  background: none;
+  border: none;
+  color: var(--cookies-and-cream);
+  cursor: pointer;
+  transition: 150ms linear all;
+}
+
+.slideshow button:hover {
+  color: var(--dark-sea-green);
+  transition: 150ms linear all;
+}
+
+.slideshow button .icon {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+/**
+ * Range Inputs
+ */
+
+.settings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.settings label {
+  display: block;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+input[type="range"] {
+  /* reset */
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+
+  width: 22rem;
+
+  --track-height: 0.5rem;
+  --track-color: rgba(255, 255, 255, 0.25);
+  --thumb-size: 1.5rem;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background: var(--track-color);
+  border-radius: calc(var(--track-height) / 2);
+  height: var(--track-height);
+}
+
+input[type="range"]::-moz-range-track {
+  background: var(--track-color);
+  border-radius: calc(var(--track-height) / 2);
+  height: var(--track-height);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  /* reset */
+  -webkit-appearance: none;
+  appearance: none;
+
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  margin-top: calc(var(--track-height) / 2 - var(--thumb-size) / 2); /* center on track */
+  border-radius: 50%;
+  background-color: var(--cookies-and-cream);
+}
+
+input[type="range"]::-moz-range-thumb {
+  /* reset */
+  border: none;
+
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  border-radius: 50%;
+  background-color: var(--cookies-and-cream);
+}
+
+input[type="range"]:focus {
+  /* reset */
+  outline: none;
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+  border: 1px solid var(--light-carmine-pink);
+  outline: 3px solid var(--light-carmine-pink);
+  outline-offset: 0.125rem;
+}
+
+input[type="range"]:focus::-moz-range-thumb {
+  border: 1px solid var(--light-carmine-pink);
+  outline: 3px solid var(--light-carmine-pink);
+  outline-offset: 0.125rem;
+}
+
+/**
+ * Footer
+ */
+
+footer {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 6rem;
+  padding-bottom: 0.5rem;
+}
+
+footer p {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+footer .icon {
+  width: 1.3rem;
+  height: 1.3rem;
+  fill: var(--light-carmine-pink);
+  stroke: var(--light-carmine-pink);
+}
+
+footer a,
+footer a:visited,
+footer a:hover {
+  color: inherit;
+  text-decoration: none;
+}

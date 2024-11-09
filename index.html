@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>dicecube</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="a JavaScript module for dicing and shuffling images on HTML canvas">
+
+  <meta property="og:title" content="dicecube">
+  <meta property="og:description" content="a JavaScript module for dicing and shuffling images on HTML canvas">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.rasch.co/dicecube/">
+  <meta property="og:image" content="">
+  <meta property="og:image:alt" content="">
+
+  <link rel="icon" href="data:image/svg+xml,
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+      <text y='.9em' font-size='90'>🧊</text>
+    </svg>">
+
+  <script type="module" src="script.js"></script>
+</head>
+<body>
+  <main>
+    <h1><a href="/">dicecube</a></h1>
+
+    <div class="slideshow">
+      <button id="prev">
+        <svg class="icon">
+          <use xlink:href="icons.svg#chevron-left-icon"></use>
+        </svg>
+      </button>
+      <canvas class="dicecube"></canvas>
+      <button id="next">
+        <svg class="icon">
+          <use xlink:href="icons.svg#chevron-right-icon"></use>
+        </svg>
+      </button>
+    </div>
+
+    <div class="settings">
+      <p>
+        <input type="range" id="gap" name="gap" min="0" max="15" value="1" />
+        <label for="gap"><output id="gap-value">1px gaps</output></label>
+      </p>
+      <p>
+        <input type="range" id="columns" name="columns" min="2" max="15" value="5" />
+        <label for="columns"><output id="columns-value">5 columns</output></label>
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <p>
+      Made with
+      <svg class="icon">
+        <use xlink:href="icons.svg#terminal-icon"></use>
+      </svg>
+      by <a href="https://www.rasch.co">rAsCH</a>
+    </p>
+  </footer>
+</body>
+</html>
