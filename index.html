@@ -26,13 +26,13 @@
     <h1><a href="/">dicecube</a></h1>
 
     <div class="slideshow">
-      <button id="prev">
+      <button id="prev" aria-label="Previous Image">
         <svg class="icon">
           <use xlink:href="icons.svg#chevron-left-icon"></use>
         </svg>
       </button>
       <canvas class="dicecube"></canvas>
-      <button id="next">
+      <button id="next" aria-label="Next Image">
         <svg class="icon">
           <use xlink:href="icons.svg#chevron-right-icon"></use>
         </svg>
@@ -49,6 +49,16 @@
         <label for="columns"><output id="columns-value">5 columns</output></label>
       </p>
     </div>
+
+    <p class="description">
+      Dicecube is a module for splitting images into squares and rendering them
+      on HTMLCanvas. It is fairly low level to allow for building custom loading
+      effects and transitions. Check out the
+      <a href="https://github.com/rasch/dicecube/blob/main/README.md">API documentation</a>
+      in the
+      <a href="https://github.com/rasch/dicecube">source code repository</a>
+      for more details.
+    </p>
   </main>
 
   <footer>

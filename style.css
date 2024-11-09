@@ -130,6 +130,23 @@ h1 a:hover {
   transition: 150ms linear color;
 }
 
+p.description {
+  max-width: 32rem;
+  margin: 5rem auto 0;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+p.description a,
+p.description a:visited {
+  color: var(--dark-sea-green);
+  text-decoration: none;
+}
+
+p.description a:hover {
+  text-decoration: underline;
+}
+
 .icon {
   width: 1.1rem;
   height: 1.1rem;
