@@ -1,6 +1,19 @@
 import { Dicecube } from "./dicecube.js"
 
 // ---------------------------------------
+// Image Source and Size
+// ---------------------------------------
+
+const imageSize = () => {
+  const width = window.innerWidth
+
+  return width >= 500 ? 400 : width >= 400 ? 300 : 250
+}
+
+const imageSource = index =>
+  `https://picsum.photos/${imageSize()}?grayscale&random=${index}`
+
+// ---------------------------------------
 // Initialize Dicecube
 // ---------------------------------------
 
@@ -10,11 +23,18 @@ const canvas = document.querySelector("canvas.dicecube")
 if (!canvas) throw new Error("Canvas not found")
 
 const cube = new Dicecube(canvas, {
-  src: "https://picsum.photos/400?grayscale&random=1",
+  src: imageSource(1),
+  width: imageSize(),
   gap: 1,
 })
 
 cube.init()
+
+window.addEventListener("resize", () => {
+  cube.src = imageSource(1)
+  cube.width = imageSize()
+  cube.init()
+})
 
 // ---------------------------------------
 // Slideshow
@@ -24,7 +44,7 @@ let index = 1
 
 // cache the next image
 const cache = new Image()
-cache.src = `https://picsum.photos/640/480?grayscale&random=${index + 1}`
+cache.src = imageSource(index + 1)
 
 const prev = document.querySelector("#prev")
 const next = document.querySelector("#next")
@@ -40,16 +60,16 @@ const spiralTransition = cube => {
 }
 
 prev?.addEventListener("click", () => {
-  cube.loadImage(`https://picsum.photos/640/480?grayscale&random=${--index}`)
+  cube.loadImage(imageSource(--index))
   .then(() => {
     spiralTransition(cube)
   })
 })
 
 next?.addEventListener("click", () => {
-  cube.loadImage(`https://picsum.photos/640/480?grayscale&random=${++index}`)
+  cube.loadImage(imageSource(++index))
   .then(() => {
-    cache.src = `https://picsum.photos/640/480?grayscale&random=${index + 1}`
+    cache.src = imageSource(index + 1)
     spiralTransition(cube)
   })
 })
