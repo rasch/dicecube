@@ -116,13 +116,17 @@ gapSlider?.addEventListener("change", () => {
 
 let shuffled = false
 
+canvas.title = "click to shuffle"
+
 canvas.addEventListener("click", () => {
   if (shuffled) {
     cube.resetPositions()
     spiralTransition(cube)
+    canvas.title = "click to shuffle"
   } else {
     cube.shuffle()
     spiralTransition(cube)
+    canvas.title = "click to unshuffle"
   }
 
   shuffled = !shuffled
