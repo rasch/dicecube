@@ -4,12 +4,15 @@ import { Dicecube } from "./dicecube.js"
 // Image Source and Size
 // ---------------------------------------
 
+let index = 1
+
 const imageSize = () => {
   const width = window.innerWidth
 
   return width >= 500 ? 400 : width >= 400 ? 300 : 250
 }
 
+/** @param {number} index */
 const imageSource = index =>
   `https://picsum.photos/${imageSize()}?grayscale&random=${index}`
 
@@ -23,7 +26,7 @@ const canvas = document.querySelector("canvas.dicecube")
 if (!canvas) throw new Error("Canvas not found")
 
 const cube = new Dicecube(canvas, {
-  src: imageSource(1),
+  src: imageSource(index),
   width: imageSize(),
   gap: 1,
 })
@@ -31,7 +34,7 @@ const cube = new Dicecube(canvas, {
 cube.init()
 
 window.addEventListener("resize", () => {
-  cube.src = imageSource(1)
+  cube.src = imageSource(index)
   cube.width = imageSize()
   cube.init()
 })
@@ -39,8 +42,6 @@ window.addEventListener("resize", () => {
 // ---------------------------------------
 // Slideshow
 // ---------------------------------------
-
-let index = 1
 
 // cache the next image
 const cache = new Image()
