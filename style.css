@@ -49,27 +49,6 @@ h6 {
 }
 
 /**
- * Base
- */
-
-:root {
-  /**
-   * Retro Color Scheme (by Sophia)
-   * https://www.schemecolor.com/retro.php
-   */
-  --raisin-black: #272324;
-  --cookies-and-cream: #e4d8b4;
-  --khaki: #c2b28f;
-  --dark-sea-green: #83b799;
-  --light-carmine-pink: #e86f68;
-  --arylide-yellow: #e2cd6d;
-  --gradient: linear-gradient(to bottom, var(--light-carmine-pink), var(--dark-sea-green));
-
-  --sans: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
-  --mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
-}
-
-/**
  * Boulder Font (OFL)
  *
  * This base64 enconded font is a subset that only contains the six (6)
@@ -94,18 +73,37 @@ h6 {
   src: url("data:font/woff2;base64,d09GMgABAAAAAAUgAA4AAAAADUQAAATKAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP0ZGVE0cGiAGYACCWggEEQgKhxCFYQsUAAE2AiQDGgQgBYtiBzQbjAsjESaMsgfgLw54MqeRQ7hOTTb9sxGwRsOtt5fzQTz+hni1X5up5hApB0ccQbXfZ8/ufroQo0JQF8fsEfTJqMhchCEN5AgkuESl6iGKl66igwGd9f7nWj5ZVLX0W9255ABtGd1idvcfZUNHwtgq316YQcR0/3N6P+H//yU3AFBAz0eouemWZWNbdbEjtJEDFCqdRzfZ9fmRULNqLe0BulfvIR0wOk5E2AeaMLKQW/5lSBEpAonCx8VFRqg4HavzEG/w4er0vwMBX3L6Hj6/XnIHvkwZdESgK3oaKKEgIRBI+XHuqSlFQcVFQWFfdEABIABg1fbPd6y0y9kyo0KZERCQV4CRAhkZQwXYIQsMVSxEXRGSg85WFXalB1bHQh1kRa06CA1CCF5OguhuQpjAVy61OhrUH9HEPszodA1RVRJogd7oQ0wklgMKpksgS7KsSKWUBF09vZRVtzppaIxIFysbrU2+iyyaGPltYSdnUgt2mq0TqLPq37oSfnKtcPsSsOI6X8g6bEtTgzQVoOn5QCq8G9ERu6hGuARnoUETUJCmpiyuCqAcGIUWaHOqQxkTKXfAp0oZcgsIXmQoU1ZRiBhTVAnBLmlsnwvhZB0xD8hjOOp2ygzakrZu/51OXtHV1+lz5XnhYyWiqNYiaju5/Ofs5NycNtE/TiLgFHJ5StCKNQcbIazzLVHMKWGmHHLejfKLEUnAPWnbyc7yxzwubrXAjRKoM0/5Wsb6ftBxAMLREcVNoscOrjtL9ISQlkVZA3tEn8WUB3iY2Fti2EAj0kYpaKYI3nwxkJNzd/JB3RA7kQMdVyNWWmHvbJZ4nMbj7jgOD3SGGUsfNYrfszvrtY+Vek7WRkIWalaA5Hr8j8T4zoHg/MXLr6Nw6d8mxeLuBUdXc/K1nkFTAkGZUSE/hnxNAABKfmw0KFtx+ELz/IGWdgUkhMBK0wHD45gADLO0GqHhEJ/kC3yWO1D08Aw12XvUNfxBw5TYhKb+8QAt3eMT2oxN89HFkvQOXS3Ol9FNr/zz4D4mlXWyKC0shiF0184n+RSf5RsohruPmrq3qOvuMxqe/e0fW87TwLbDZNhxm1/YtZid2OPbA/vO2vx9B977zwWttmaxUsUjlxILLEeeKYHjJXIeaZGkIawoHedOWj2r4HyS+2tOLgvsogVTOcXCrh+mubLANkrZtCJh4ZGA/cIZDfGoRMMFG0W0PuEsDRJmPUmXXxV0zvvg9w4yHmEOSVCTsATzq2cS1gTRCoTduiGjzeCK6rCPWzvreGJHycUJ9gsPuwHYt4wuAhzgeTVnRBAK6sG6Ht+DbN9mi3KExo/RNQpGzSqgdW3uCGQp6XNKY2IR5uuzMK/q44IdeDswk/7oI7i69efk7bj+QIRx/Z/kCE5FWxKaetoGujrESF5XpDW4utfyclWE+7/JDqLZaw+6HdFHSx61uns1zZq2fUNSh2xCiaivWBbbgcoEbVWd/lB2pNjVi7FsfQOb1ZT5+KpLHrGsSamj4MSWfey4bmknwJvYguLTvUvECBKZCTave5ENpVZZsxwypqeRjJn11COuSpUcTu9lplx+DrXjiEu1jaqrteUxY62iZ2t/x8mKUpUDCcBzBQgAALRAgNzqyrUbtx79Ag==");
 }
 
+/**
+ * Base
+ */
+
+:where(html) {
+  /* Retro Color Scheme (by Sophia) <https://www.schemecolor.com/retro.php> */
+  --raisin-black: #272324;
+  --cookies-and-cream: #e4d8b4;
+  --khaki: #c2b28f;
+  --dark-sea-green: #83b799;
+  --light-carmine-pink: #e86f68;
+  --arylide-yellow: #e2cd6d;
+  --gradient: linear-gradient(to bottom, var(--light-carmine-pink), var(--dark-sea-green));
+
+  --sans: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  --mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+
+  /* Range Inputs */
+  --track-height: 0.5rem;
+  --track-color: rgba(255, 255, 255, 0.25);
+  --thumb-size: 1.5rem;
+}
+
 body {
-  position: relative;
-  display: grid;
-  place-items: center;
-  min-height: 100%;
   color: var(--cookies-and-cream);
   background-color: var(--raisin-black);
   font-family: var(--sans);
 }
 
 main {
-  padding-bottom: 6rem;
+  padding: 6rem 0;
 }
 
 h1 {
@@ -133,6 +131,7 @@ h1 a:hover {
 p.description {
   max-width: 32rem;
   margin: 5rem auto 0;
+  padding: 1rem;
   font-size: 1.2rem;
   text-align: center;
 }
@@ -166,6 +165,7 @@ p.description a:hover {
 }
 
 .slideshow button {
+  flex-shrink: 0;
   background: none;
   border: none;
   color: var(--cookies-and-cream);
@@ -209,10 +209,6 @@ input[type="range"] {
   cursor: pointer;
 
   width: 22rem;
-
-  --track-height: 0.5rem;
-  --track-color: rgba(255, 255, 255, 0.25);
-  --thumb-size: 1.5rem;
 }
 
 input[type="range"]::-webkit-slider-runnable-track {
@@ -271,12 +267,8 @@ input[type="range"]:focus::-moz-range-thumb {
  */
 
 footer {
-  position: absolute;
-  bottom: 0;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
-  height: 6rem;
   padding-bottom: 0.5rem;
 }
 
