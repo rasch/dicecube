@@ -17,7 +17,7 @@ npm i dicecube
 ```html
 <canvas class="dicecube"></canvas>
 <script type="module">
-import { Dicecube } from "./dicecube.js";
+import { Dicecube } from "./node_modules/dicecube/dicecube.js";
 
 const canvas = document.querySelector("canvas.dicecube");
 
