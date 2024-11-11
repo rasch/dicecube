@@ -1,0 +1,35 @@
+{
+  "name": "dicecube",
+  "version": "0.1.0",
+  "description": "a JavaScript module for dicing and shuffling images on HTML canvas",
+  "type": "module",
+  "files": [
+    "dicecube.js",
+    "dicecube.d.ts"
+  ],
+  "types": "dicecube.d.ts",
+  "scripts": {
+    "clean": "rm -rf node_modules dicecube.d.ts",
+    "gen-types": "tsc dicecube.js --declaration --allowJs --emitDeclarationOnly"
+  },
+  "keywords": [
+    "image",
+    "tiles",
+    "square",
+    "jpeg",
+    "png",
+    "gaps",
+    "slideshow",
+    "transition",
+    "canvas"
+  ],
+  "author": "Randy Schneck <i@rasch.co>",
+  "license": "0BSD",
+  "repository": {
+    "type": "git",
+    "url": "https://git.sr.ht/~rasch/dicecube.git"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}
